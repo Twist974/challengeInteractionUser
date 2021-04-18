@@ -4,12 +4,12 @@ import { CreateKittenComponent } from './create-kitten/create-kitten.component';
 import { ListKittenComponent } from './list-kitten/list-kitten.component';
 
 const routes: Routes = [
-  { path: '/create', component: CreateKittenComponent },
-  { path: '/', component: ListKittenComponent}
+  { path: 'create', component: CreateKittenComponent },
+  { path: '', component: ListKittenComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

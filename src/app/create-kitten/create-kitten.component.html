@@ -2,55 +2,31 @@
   <div class="flex-container">
     <h1>Add your kitten</h1>
 
-    <form (ngSubmit)="form.valid && addKitten()" #form="ngForm">
+    <form (ngSubmit)="form.valid && sendKitten()" #form="ngForm">
       <div>
         <label for="name">Name</label><br />
-        <input
-          type="text"
-          name="name"
-          [(ngModel)]="name"
-          #name="ngModel"
-          required
-        />
+        <input type="text" name="name" [(ngModel)]="newKittenName" #name="ngModel" required />
         <br />
-        <span *ngIf="form.submitted && name.errors?.required"
-          >Le nom du chat est requis.</span
-        >
+        <span *ngIf="form.submitted && name.errors?.required">Le nom du chat est requis.</span>
       </div>
 
       <div>
         <label for="race">Race</label><br />
-        <input
-          type="text"
-          name="race"
-          [(ngModel)]="race"
-          #race="ngModel"
-          required
-        />
+        <input type="text" name="race" [(ngModel)]="newKittenRace" #race="ngModel" required />
         <br />
-        <span *ngIf="form.submitted && race.errors?.required"
-          >La race du chat est requise.</span
-        >
+        <span *ngIf="form.submitted && race.errors?.required">La race du chat est requise.</span>
       </div>
 
       <div>
         <label for="birthday">Birthday</label><br />
-        <input
-          type="date"
-          name="birthday"
-          [(ngModel)]="birthday"
-          #birthday="ngModel"
-          required
-        />
+        <input type="date" name="birthday" [(ngModel)]="newKittenBirthday" #birthday="ngModel" required />
         <br />
-        <span *ngIf="form.submitted && birthday.errors?.required"
-          >La date de naissance du chat est requise.</span
-        >
+        <span *ngIf="form.submitted && birthday.errors?.required">La date de naissance du chat est requise.</span>
       </div>
 
       <div>
         <label for="pic">Picture</label><br />
-        <input type="text" name="pic" [(ngModel)]="pic" #pic="ngModel" />
+        <input type="text" name="pic" [(ngModel)]="newKittenPic" #pic="ngModel" />
       </div>
       <br />
 
@@ -61,9 +37,9 @@
 
       <div class="buttons">
         <button type="submit">Soumettre</button>
-        <button [routerLink]="['/']">Retour</button>
       </div>
     </form>
+    <button [routerLink]="['/']">Retour</button>
   </div>
 </section>
 

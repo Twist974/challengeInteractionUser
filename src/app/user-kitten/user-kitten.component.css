@@ -1,0 +1,5 @@
+#aside {
+  border-left: 1px lightgrey solid;
+  display: flex;
+  flex-direction: column;
+}

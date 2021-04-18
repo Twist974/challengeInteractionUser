@@ -7,25 +7,30 @@ import { Kitten } from '../common/kitten';
   styleUrls: ['./create-kitten.component.css'],
 })
 export class CreateKittenComponent implements OnInit {
-name: string;
-race: string;
-birthday: string;
-pic: string;
+  newKittenName: string;
+  newKittenRace: string;
+  newKittenBirthday: string;
+  newKittenPic: string;
 
   @Output()
-  sendNewKittenDataToKittensList: EventEmitter<Kitten> = new EventEmitter();
+  sendNewKittenDataTokittenList: EventEmitter<Kitten> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   sendKitten(): any {
-   this.sendNewKittenDataToKittensList.emit(
-     new Kitten(this.name, this.race, this.birthday, this.pic)
-   );
-   this.name="";
-   this.race= "";
-   this.birthday= "";
-   this.pic="";
+    this.sendNewKittenDataTokittenList.emit(
+      new Kitten(
+        this.newKittenName,
+        this.newKittenRace,
+        this.newKittenBirthday,
+        this.newKittenPic
+      )
+    );
+    this.newKittenName = '';
+    this.newKittenRace = '';
+    this.newKittenBirthday = '';
+    this.newKittenPic = '';
   }
 }

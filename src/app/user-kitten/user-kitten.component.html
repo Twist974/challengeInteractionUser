@@ -1,1 +1,15 @@
-<p>user-kitten works!</p>
+<section id="aside">
+  <h2>My cat crew</h2>
+
+  <div class="myKitten-container">
+
+    <div *ngFor="let kitten of userKittenList">
+      <img src="{{kitten.pic}}" alt="a kitten" (mouseover)="displayInfo = true" (mouseleave)="displayInfo=false" />
+      <span style="display: block" *ngIf=" displayInfo">Name : {{kitten.name}}, Race : {{kitten.race}}, Birthday :
+        {{kitten.birthday}}</span>
+
+    </div>
+
+  </div>
+
+</section>

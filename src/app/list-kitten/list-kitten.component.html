@@ -5,30 +5,27 @@
     <p>Voici la liste de nos chatons :</p>
 
     <div class="kitten-container">
-      <div *ngFor="let kitten of kittensList">
+      <div *ngFor="let kitten of kittenList">
         <div class="kitten-card">
-          <img
-            src="{{ kitten.pic }}"
-            alt="a kitten"
-            (mouseover)="displayInfo = true"
-            (mouseleave)="displayInfo = false"
-          />
-          <button>Add {{ kitten.name }} to your cat crew</button>
+          <img src="{{ kitten.pic }}" alt="a kitten" (mouseover)="displayInfo = true"
+            (mouseleave)="displayInfo = false" />
+          <span *ngIf=" displayInfo">Name : {{ kitten.name }}, Race : {{ kitten.race }}, Birthday :
+            {{ kitten.birthday }}</span>
+          <button (click)="addKittenToUserList()">Add {{ kitten.name }} to your cat crew</button>
         </div>
-        <span *ngIf="displayInfo"
-          >Name : {{ kitten.name }}, Race : {{ kitten.race }}, Birthday :
-          {{ kitten.birthday }}</span
-        >
+
       </div>
     </div>
 
-    <button type="submit" [routerLink]="['/create']">
-      Add your own kitten
+    <button type="submit">
+      <a [routerLink]="['create']">Add your own kitten</a>
     </button>
+
+    <app-create-kitten (sendNewKittenDataTokittenList)="receiveKitten($event)"></app-create-kitten>
   </div>
 
   <div>
-    <app-create-kitten (sendNewKittenDataToKittensList)></app-create-kitten>
-    <app-user-kitten></app-user-kitten>
+
+    <app-user-kitten [chosenKitten]="chosenKitten"></app-user-kitten>
   </div>
 </div>
