@@ -1,0 +1,28 @@
+.kitten-container {
+  display: flex;
+  justify-content: center;
+}
+
+.kitten-card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 1cm;
+  box-shadow: lightgrey 5px 5px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}

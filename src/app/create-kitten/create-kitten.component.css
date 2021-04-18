@@ -1,0 +1,17 @@
+#creatingArea {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+form > div {
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
